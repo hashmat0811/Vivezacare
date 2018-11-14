@@ -1,0 +1,184 @@
+/*
+ * Hover Effect Collection
+ * Author - Md Ismail Hossain
+ * Web    - http://ismail-hossain.me/
+ * Email  - ismailcseku@gmail.com
+ * Created Date: 05/14/2016
+ * Version: 1.0
+ */
+
+/*
+//Import bootstrap variables and mixins for reference
+@import (reference) "less-bootstrap/variables.less";
+@import (reference) "less-bootstrap/mixins.less";
+@import (reference) "less-healthzone/variables.less";
+*/
+
+.hover-effect {
+    overflow: hidden;
+    position: relative;
+    .thumb {
+        overflow: hidden;
+        .photo {
+            .backface-visibility(hidden);
+            .transition(all 1200ms ease 0s);
+        }
+    }
+
+    .hover-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
+        background: none!important;
+        color: transparent!important;
+        z-index: 100;
+    }
+
+    .overlay-shade {
+        background-color: fade(@black, 70%);;
+        position: absolute;
+        display: inline-block;
+        vertical-align: middle;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        .transition(opacity .3s ease-in-out);
+    }
+
+    &:hover {
+        .overlay-shade {
+            opacity: 0.7;
+            filter: alpha(opacity=70);
+        }
+    }
+
+    .icons-holder {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline-block;
+        width: auto;
+        height: 36px;
+        vertical-align: middle;
+        z-index: 130;
+        .transition(all .3s ease-in-out 0s);
+
+        .icons-holder-inner {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: -18px 0 0 -50%;
+
+            a {
+                opacity: 1;
+                .transition(all .3s ease-in-out);
+            }
+        }
+    }
+
+    .text-holder {
+        box-sizing: border-box;
+        display: block;
+        /*height: 100%;*/
+        opacity: 1;
+        overflow: hidden;
+        position: absolute;
+        bottom: 30px;
+        .transition(all 0.3s ease-in-out 0s);
+        width: 100%;
+        z-index: 100;
+
+        .title {
+
+        }
+    }
+
+
+    /*
+     * Effect: effect2
+     * -----------------------------------------------
+    */
+    &.effect2 {
+        &:hover {
+            .overlay-shade {
+                opacity: 1;
+                filter: alpha(opacity=90);
+            }
+            .thumb .photo {
+                .scale(1.2);
+            }
+            .icons-holder {
+                top: 50%;
+                .icons-holder-inner {
+                    a {
+                        opacity: 1;
+                        filter: alpha(opacity=1);
+                    }
+                }
+            }
+            .text-holder {
+                bottom: 20px;
+                opacity: 1;
+            }
+        }
+      
+    }
+    /* end effect2 */
+
+
+
+    /*
+     * Effect: effect3
+     * -----------------------------------------------
+    */
+    &.effect3 {
+
+        .icons-holder {
+            top: -10%;
+            .icons-holder-inner {
+                a {
+                    opacity: 0;
+                    filter: alpha(opacity=0);
+                }
+            }
+        }
+
+        .text-holder {
+            bottom: 0;
+        }
+
+        &:hover {
+            .overlay-shade {
+                opacity: 1;
+                filter: alpha(opacity=90);
+            }
+            .thumb .photo {
+                .scale(1.2);
+            }
+            .icons-holder {
+                top: 50%;
+                .icons-holder-inner {
+                    a {
+                        opacity: 1;
+                        filter: alpha(opacity=1);
+                    }
+                }
+            }
+            .text-holder {
+                bottom: 20px;
+                opacity: 1;
+            }
+        }
+    }
+    /* end effect3 */
+
+
+}

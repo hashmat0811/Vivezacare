@@ -1,0 +1,40 @@
+/*
+ * Category: Promotion Box
+ * -----------------------------------------------
+*/
+
+.promotion-box {
+	position: relative;
+	overflow: hidden;
+	display: block;    
+}
+.promotion-box img {
+	transition: all 0.5s ease-out 0s;
+}
+.promotion-box:before {
+ 	background-color: rgba(0, 0, 0, 0);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: background-color 1s ease 0s;
+    width: 100%;
+    z-index: 1;
+}
+.promotion-box:hover:before {
+ 	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.promotion-content {
+	position: absolute;
+	padding: 0 20px;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    z-index: 1;
+}
+
+.promotion-box:hover img {
+	transform: scale(1.1) rotate(3deg);
+}
