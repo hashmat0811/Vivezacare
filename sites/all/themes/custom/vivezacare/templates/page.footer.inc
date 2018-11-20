@@ -12,7 +12,10 @@
         <div class="col-sm-6 col-md-3">
           <div class="widget dark">
             <h5 class="widget-title line-bottom">Quick Contact</h5>
-             <form method="post" action="quick.php" class="quick-contact-form" name="quick">
+            <?php $block = module_invoke('webform', 'block_view', 'client-block-4');
+                  print render($block['content']); 
+              ?>
+             <!-- <form method="post" action="quick.php" class="quick-contact-form" name="quick">
               <div class="form-group">
                 <input type="text" placeholder="Enter Name" required="" class="form-control" name="form_name" aria-required="true">
               </div>
@@ -26,7 +29,7 @@
                 <input type="hidden" value="" class="form-control" name="form_botcheck">
                 <button data-loading-text="Please wait..." class="btn btn-default btn-transparent btn-xs btn-flat mt-0" type="submit">Send Message</button>
               </div>
-            </form>
+            </form> -->
 
             <!-- Quick Contact Form Validation-->
             <script type="text/javascript">
@@ -56,15 +59,12 @@
         </div>
         <div class="col-sm-6 col-md-3">
           <div class="widget dark"> 
-          <h5 class="widget-title line-bottom">Locate Us</h5>          
-            <p>No 22 1st Floor, Rear wing Nj Chambers
-Venkatswamy naidu road
-Bangalore, Karnataka 560051</p>
-            <ul class="list-inline mt-5">
-              <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray" href="#">+918043744701</a> </li>
-              <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-colored mr-5"></i> <a class="text-gray" href="#"> Info@vivezacare.com</a> </li>
-              
-            </ul>            
+          <h5 class="widget-title line-bottom">Locate Us</h5>
+          <?php
+            $block = block_load('block', '1');
+            $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+            print $output;
+          ?>                     
           </div>
         </div>
         <div class="col-sm-6 col-md-3">

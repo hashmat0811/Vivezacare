@@ -1,4 +1,8 @@
-<?php include 'page.header.inc' ?>
+<?php 
+  global $language ;
+  $langcode = $language->language;
+  include 'page.header.inc' 
+?>
 
 <!-- Start main-content -->
 <div class="main-content">
@@ -21,30 +25,27 @@
         <div class="section-content">
           <div class="row">
             <div class="col-md-12">
-              <?php echo $node->body['und'][0]['value']; ?>
-<span><a href="contact.html" class="btn btn-theme-colored btn-flat btn-sm text-uppercase text-center mt-10">Reach Us</a></span>
+              <?php print $node->body[$langcode][0]['value']; ?>
+              <span><a href="contact.html" class="btn btn-theme-colored btn-flat btn-sm text-uppercase text-center mt-10"><?php echo t('Reach Us'); ?></a></span>
             </div>
 		</div><br>
 		<div class="row">
 			<div class="col-md-7">
 				<div class="info-box divider p-20 mt-30" data-bg-img="" style="background-image: url(&quot;&quot;);">
-               <h3 class="">Why Us</h3>
-
-               <ul class="list list-border check">
-                 <li><a class="" href="#">Assured treatment at reputed hospitals by highly qualified Doctors.</a></li>
-                 <li><a class="" href="#">Complete clarity in treatment procedures.</a></li>
-                 <li><a class="" href="#">Transparent financials.</a></li>
-				  <li><a class="" href="#">Video Conference with the Doctor/s can be arranged if necessary
-Facere similique voluptatum Sit amet consectetur adipisicing</a></li>
-                 <li><a class="" href="#">Complete assistance from preliminary assessment to final treatment. Inclusive of Transport, accommodation for members accompanying the patients, food, Visa formalities (for foreign patients) and everything else to help you recuperate.</a></li>
-               </ul>
-
-             </div>
-			</div>
+            <h3 class=""><?php echo t('Why Us'); ?></h3>
+            <ul class="list list-border check">
+              <?php foreach ($node->field_list[$langcode] as $key => $value) { ?>
+              <li><a class="" href="#">
+                <?php print $value['value'];?>
+              </a></li>
+              <?php } ?>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
 
 

@@ -11,14 +11,14 @@
 <meta name="author" content="PentaMount" />
 
 <!-- Page Title -->
-<title>Vivezacare - Affordable Healthcare Solutions</title>
+<!-- <title>Vivezacare - Affordable Healthcare Solutions</title> -->
 
 <!-- Favicon and Touch Icons -->
-<link href="sites/all/themes/custom/vivezacare/images/favicon.png" rel="shortcut icon" type="image/png">
+<!-- <link href="sites/all/themes/custom/vivezacare/images/favicon.png" rel="shortcut icon" type="image/png">
 <link href="sites/all/themes/custom/vivezacare/images/apple-touch-icon.png" rel="apple-touch-icon">
 <link href="sites/all/themes/custom/vivezacare/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
 <link href="sites/all/themes/custom/vivezacare/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-<link href="sites/all/themes/custom/vivezacare/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+<link href="sites/all/themes/custom/vivezacare/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"> -->
 
 <!-- Stylesheet -->
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -112,20 +112,25 @@
         </div>
       </div>
     </div>
-	
+  
+    <!-- Header Menu -->
     <div class="header-nav">
       <div class="header-nav-wrapper navbar-scrolltofixed bg-lighter">
         <div class="container">
-          <nav id="menuzord-right" class="menuzord orange no-bg"> <a class="menuzord-brand pull-left flip" href="index.html"><img src="sites/all/themes/custom/vivezacare/images/logo-wide.png" alt=""></a>
-            <ul class="menuzord-menu menuzord-right">
-              <li class=""><a href="about.html">About Us</a></li>
-			  <li class=""><a href="counseling.html">Counseling</a></li>
-              <li class=""><a href="medical.html">Medical Tourism</a></li>
-			   <li class=""><a href="specialization.html">Specializations</a></li>
-			   <li class=""><a href="alternate.html">Alternate Medicine</a></li>
-               <li class=""><a href="diagnostic.html">Diagnostics</a></li>
-			   <li class=""><a href="contact.html">Contact</a></li>
-			</ul>
+          <nav id="menuzord-right" class="menuzord orange no-bg"> <a class="menuzord-brand pull-left flip" href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt=""></a>
+          <!-- main menu starts -->
+            <?php print theme('links__system_main_menu', array(
+              'links' => $main_menu,
+              'attributes' => array(
+                'id' => 'main-menu-links',
+                'class' => array('menuzord-menu', 'menuzord-right'),
+              ),
+              'heading' => array(
+                'text' => t('Main menu'),
+                'level' => 'h2',
+                'class' => array('element-invisible'),
+              ),
+            )); ?>
           </nav>
         </div>
       </div>
