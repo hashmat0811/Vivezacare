@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-6 col-md-offset-3">
-          <div class="widget dark mb-60"> <img src="sites/all/themes/custom/vivezacare/images/logo-wide-white.png" alt="" class="mt-10 mb-20">
+          <div class="widget dark mb-60"> <img src="<?php echo $base_url; ?>/sites/all/themes/custom/vivezacare/images/logo-wide-white.png" alt="" class="mt-10 mb-20">
             <p class="font-12"></p>            
           </div>
         </div>
@@ -32,7 +32,7 @@
             </form> -->
 
             <!-- Quick Contact Form Validation-->
-            <script type="text/javascript">
+            <!-- <script type="text/javascript">
               $("#quick_contact_form2").validate({
                 submitHandler: function(form) {
                   var form_btn = $(form).find('button[type="submit"]');
@@ -54,7 +54,7 @@
                   });
                 }
               });
-            </script>
+            </script> -->
           </div>
         </div>
         <div class="col-sm-6 col-md-3">
@@ -70,28 +70,24 @@
         <div class="col-sm-6 col-md-3">
           <div class="widget dark">
             <h5 class="widget-title line-bottom">Tags</h5>
-            <div class="tags">
-               <a href="specialization.html">CARDIAC</a>
-              <a href="specialization.html">ORTHOPEDIC</a>
-              <a href="specialization.html">CANCER</a>
-              <a href="specialization.html">LIVER DISEASES</a>
-              <a href="specialization.html">NEUROLOGY</a>
-              <a href="specialization.htmll">GYNAECOLOGY</a>
-              <a href="alternate.html">CHELATION THERAPY</a>
-              <a href="alternate.html">EECP</a>
-              <a href="alternate.html">OZONE THERAPY</a>
-              <a href="alternate.html">GLUTHATHIONE</a>
-              <a href="alternate.html">COLON HYDROTHERAPY</a>
-            </div>
+            <!-- <div class="tags"> -->
+            <?php 
+              $footer_menu = menu_navigation_links('menu-footer');
+              print theme('links__system_footer_menu', array(
+                'links' => $footer_menu, 
+                // 'heading' => t('footer menu'),              
+              ));
+            ?>
+            <!-- </div> -->
           </div>
         </div>
         <div class="col-sm-6 col-md-3">
           <div class="widget dark">
-            <h5 class="widget-title line-bottom">VIVEZACARE On Mobile</h5>
+            <h5 class="widget-title line-bottom"><?php print t('VIVEZACARE On Mobile') ?></h5>
             <div class="opening-hours">
                 <ul class="list-border">
-                  <li class="clearfix"> <span> Coming Soon :  </span>
-                    <div class="value pull-left"> &nbsp;&nbsp;<img src="sites/all/themes/custom/vivezacare/images/android.png"> &nbsp;&nbsp;<img src="sites/all/themes/custom/vivezacare/images/ios.png"> </div>
+                  <li class="clearfix"> <span><?php print t('Coming Soon : '); ?> </span>
+                    <div class="value pull-left"> &nbsp;&nbsp;<img src="<?php echo $base_url; ?>/sites/all/themes/custom/vivezacare/images/android.png"> &nbsp;&nbsp;<img src="<?php echo $base_url; ?>/sites/all/themes/custom/vivezacare/images/ios.png"> </div>
                   </li>
                   
                 </ul>
@@ -102,8 +98,8 @@
     </div>
     <div class="container-fluid copy-right p-20 bg-black-333">
       <div class="row text-center">
-        <div class="col-md-12">
-          <p class="font-11 text-white m-0">Copyright &copy;2018 VIVEZACARE. All Rights Reserved. Powered By Pentamount Technologies</p>
+        <div class="col-md-12 font-11 text-white m-0">
+          <?php print render($page['footer']); ?>
         </div>
       </div>
     </div>
@@ -111,10 +107,3 @@
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 </div>
 <!-- end wrapper -->
-
-<!-- Footer Scripts -->
-<!-- JS | Custom script for all pages -->
-<!-- <script src="js/custom.js"></script> -->
-
-</body>
-</html>

@@ -20,32 +20,34 @@
       </div>
     </section>
     
-	<section>
-      <div class="container">
-        <div class="section-content">
-          <div class="row">
-            <div class="col-md-12">
-              <?php print $node->body[$langcode][0]['value']; ?>
-              <span><a href="contact.html" class="btn btn-theme-colored btn-flat btn-sm text-uppercase text-center mt-10"><?php echo t('Reach Us'); ?></a></span>
+      <section>
+        <div class="container">
+          <div class="section-content">
+            <div class="row">
+              <div class="col-md-12">
+                <?php print $node->body[$langcode][0]['value']; ?>
+                <span><a href="contact.html" class="btn btn-theme-colored btn-flat btn-sm text-uppercase text-center mt-10"><?php echo t('Reach Us'); ?></a></span>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-7">
+                <div class="info-box divider p-20 mt-30" data-bg-img="" style="background-image: url(&quot;&quot;);">
+                  <h3 class=""><?php echo t('Why Us'); ?></h3>
+                  <ul class="list list-border check">
+                    <?php foreach ($node->field_list[$langcode] as $key => $value) { 
+                      if ($value['value']):
+                      ?>
+                      <li><a class="" href="#">
+                        <?php print $value['value'];?>
+                      </a></li>
+                    <?php endif; } ?>
+                  </ul>
+                </div>
+              </div>
             </div>
-		</div><br>
-		<div class="row">
-			<div class="col-md-7">
-				<div class="info-box divider p-20 mt-30" data-bg-img="" style="background-image: url(&quot;&quot;);">
-            <h3 class=""><?php echo t('Why Us'); ?></h3>
-            <ul class="list list-border check">
-              <?php foreach ($node->field_list[$langcode] as $key => $value) { ?>
-              <li><a class="" href="#">
-                <?php print $value['value'];?>
-              </a></li>
-              <?php } ?>
-            </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
 

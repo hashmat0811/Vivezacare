@@ -164,3 +164,32 @@ function vivezacare_field__taxonomy_term_reference($variables) {
 
   return $output;
 }
+
+// Disable untranslated language links to display
+function vivezacare_links__locale_block($variables) {
+  foreach($variables['links'] as $key => $lang) {
+    if (isset($lang['attributes']['class'])) {
+        if (in_array('locale-untranslated', $lang['attributes']['class'])) {
+            unset($variables['links'][$key]);
+        }
+    }
+  }
+  return theme_links($variables);
+}
+
+// Customising Menu Links
+function vivezacare_links__system_footer_menu($variables) {
+  $site_frontpage = variable_get('site_frontpage', 'node');
+    $html = "<nav id='footer-nav' class='tags'>\n";
+    foreach ($variables['links'] as $link) {
+        if($link['href'] == '<front>') {
+          $html .= "<a class='footer-nav__button animate grid__item xl--1-5 l--1-5 sp s--tbp t--tbp' href='" .$site_frontpage ."'>" .$link['title'] ."</a>";
+        }
+        else {
+          $html .= "<a class='footer-nav__button' href='" .$link['href'] ."'>" .$link['title'] ."</a>";
+        }
+    }
+    $html .= "</nav>\n";
+  
+    return $html;
+  }

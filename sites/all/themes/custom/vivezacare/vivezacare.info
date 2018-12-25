@@ -15,6 +15,7 @@ stylesheets[all][] = css/bootstrap.min.css
 stylesheets[all][] = css/jquery-ui.min.css
 stylesheets[all][] = css/animate.css
 stylesheets[all][] = css/css-plugin-collections.css
+stylesheets[all][] = css/menuzord-skins/menuzord-boxed.css
 stylesheets[all][] = css/style-main.css
 stylesheets[all][] = css/preloader.css
 stylesheets[all][] = css/custom-bootstrap-margin-padding.css
@@ -22,7 +23,6 @@ stylesheets[all][] = css/responsive.css
 stylesheets[all][] = css/bootstrap.min.css
 stylesheets[all][] = css/colors/theme-skin-blue.css
 stylesheets[all][] = css/css-plugin-collections.css
-stylesheets[all][] = css/menuzord-skins/menuzord-boxed.css
 
 ; custom scripts
 scripts[] = js/jquery-2.2.4.min.js
@@ -33,6 +33,8 @@ scripts[] = js/jquery-plugin-collection.js
 scripts[] = js/custom.js
 
 ; revolution slider
+scripts[] = revolution-slider/js/jquery.themepunch.tools.min.js
+scripts[] = revolution-slider/js/jquery.themepunch.revolution.min.js
 scripts[] = revolution-slider/js/extensions/revolution.extension.actions.min.js
 scripts[] = revolution-slider/js/extensions/revolution.extension.carousel.min.js
 scripts[] = revolution-slider/js/extensions/revolution.extension.kenburn.min.js
@@ -42,8 +44,9 @@ scripts[] = revolution-slider/js/extensions/revolution.extension.navigation.min.
 scripts[] = revolution-slider/js/extensions/revolution.extension.parallax.min.js
 scripts[] = revolution-slider/js/extensions/revolution.extension.slideanims.min.js
 scripts[] = revolution-slider/js/extensions/revolution.extension.video.min.js
-scripts[] = revolution-slider/js/jquery.themepunch.tools.min.js
-
+stylesheets[all][] = revolution-slider/css/navigation.css
+stylesheets[all][] = revolution-slider/css/layers.css
+stylesheets[all][] = revolution-slider/css/settings.css
 
 ; regions
 regions[header] = Header

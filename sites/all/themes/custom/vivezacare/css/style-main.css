@@ -7819,7 +7819,7 @@ blockquote p {
   border: 1px solid #d3d3d3;
   display: inline-block;
   font-size: 11px;
-  margin: 5px 4px 5px -2px;
+  margin: 5px 4px 5px 0px;
   padding: 5px 10px;
 }
 .widget .tags a:hover {
@@ -8021,3 +8021,13 @@ blockquote p {
 }
 
 /*# sourceMappingURL=style-main.css.map */
+
+#footer .content p {
+  margin: auto;
+}
+
+select#lang-dropdown-select-language_content {
+  color: white;
+  background: #265d62;
+  /* border: 1px white; */
+}

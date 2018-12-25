@@ -6081,7 +6081,7 @@ fieldset[disabled] .btn-gray.focus {
   border: 1px solid #eeeeee;
   display: inline-block;
   font-size: 13px;
-  margin: 5px 4px 5px -2px;
+  margin: 5px 4px 5px 0px;
   padding: 5px 10px;
 }
 .widget .tags a:hover {

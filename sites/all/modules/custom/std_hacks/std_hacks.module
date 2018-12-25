@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * Preventing field_collection fields data from deletion at the time of translation. 
+ * Once field_collecion module comes with the update against this bug please remove below set of codes.
+ */
+function std_hacks_field_collection_item_presave(FieldCollectionItemEntity $field_collection_item) {
+  $field_item_properties = get_object_vars($field_collection_item);
+  foreach ($field_item_properties as $property_name => $property_value) {
+    if (strpos($property_name, 'field_') !== FALSE) {
+      $field_structure = field_info_field($property_name);
+      if (field_is_translatable('field_collection_item', $field_structure) == 1) {
+        $property_data = &$field_collection_item->$property_name;
+        if (isset($property_data[LANGUAGE_NONE]) &&
+          count($property_data[$field_collection_item->langcode()]) == 0) {
+          $property_data[$field_collection_item->langcode()] = $property_data[LANGUAGE_NONE];
+          unset($property_data[LANGUAGE_NONE]);
+        }
+      }
+    }
+  }
+}
+
+function std_hacks_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'webform_client_form_9') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-dark btn-theme-colored';
+    // $form['#attributes']['class'][] = 'YOUR_CLASS_NAME';
+  }
+  if($form_id == 'webform_client_form_4') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-default btn-transparent btn-xs btn-flat mt-0';
+    $form['#attributes']['class'][] = 'quick-contact-form';
+  }
+  if($form_id == 'webform_client_form_11') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-dark btn-theme-colored btn-flat btn-block';
+    $form['actions']['submit']['#prefix'] = '<div class="col-sm-12">';
+    $form['actions']['submit']['#suffix'] = '</div>';
+    // $form['#attributes']['class'][] = 'YOUR_CLASS_NAME';
+  }
+  if($form_id == 'webform_client_form_14') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-dark btn-theme-colored';
+    // $form['#attributes']['class'][] = 'YOUR_CLASS_NAME';
+  }
+}
