@@ -1,6 +1,6 @@
 
 Options +FollowSymLinks
-ErrorDocument 404 /Vivezacare/index.php
+ErrorDocument 404 /dev-vivezacare/index.php
 
 <IfModule mod_rewrite.c>
   RewriteEngine on
