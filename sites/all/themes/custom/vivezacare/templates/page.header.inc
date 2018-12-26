@@ -10,13 +10,7 @@
             <div class="widget m-0">
               <?php               
                 print render($page['featured']);
-              ?>
-              <!-- <ul class="styled-icons icon-theme-colored icon-sm">
-                <li><a href="#"><img src="<?php // echo $base_url; ?>/sites/all/themes/custom/vivezacare/images/flags/eng.png" title="English"></a></li>
-                <li><a href="#"><img src="<?php // echo $base_url; ?>/sites/all/themes/custom/vivezacare/images/flags/rus.png" title="Russian"></a></li>
-                <li><a href="#"><img src="<?php // echo $base_url; ?>/sites/all/themes/custom/vivezacare/images/flags/ara.png" title="Arabic"></a></li>
-                <li><a href="#"><img src="<?php // echo $base_url; ?>/sites/all/themes/custom/vivezacare/images/flags/fre.png" title="French"></a></li>
-              </ul> -->
+              ?>              
             </div>
           </div>
           <div class="col-md-6">
@@ -45,19 +39,20 @@
     <div class="header-nav">
       <div class="header-nav-wrapper navbar-scrolltofixed bg-lighter">
         <div class="container d-flex justify-content-between">
-          <nav id="menuzord-right" class="menuzord orange no-bg"> <a class="menuzord-brand pull-left flip" href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt=""></a>
-          <!-- main menu starts -->
+          <nav id="menuzord-right" class="menuzord orange no-bg"> 
+            <a class="menuzord-brand flip" href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt=""></a>
+            <!-- main menu starts -->
             <?php print theme('links__system_main_menu', array(
               'links' => $main_menu,
               'attributes' => array(
                 // 'id' => 'main-menu-links',
-                'class' => array('menuzord-menu', 'menuzord-right'),
+                'class' => array('menuzord-menu'),
               ),
-              'heading' => array(
-                'text' => t('Main menu'),
-                'level' => 'h2',
-                'class' => array('element-invisible'),
-              ),
+              // 'heading' => array(
+              //   'text' => t('Main menu'),
+              //   'level' => 'h2',
+              //   'class' => array('element-invisible'),
+              // ),
             )); ?>
           </nav>
         </div>

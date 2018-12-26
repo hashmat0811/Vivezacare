@@ -11,7 +11,7 @@
       <div class="section-content">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h2 class="title"><?php print $title; ?></h2>
+            <h2 class="title"><?php print $field_banner_title[$langcode][0]['value']; ?></h2>
         <!-- <p class="text-uppercase letter-space-4">Affordable Healthcare Solutions</p> -->
           </div>
         </div>

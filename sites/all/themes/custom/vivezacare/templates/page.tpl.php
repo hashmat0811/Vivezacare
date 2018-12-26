@@ -101,11 +101,11 @@
 
         <?php if ($site_name): ?>
           <?php if ($title): ?>
-            <div id="site-name"<?php if ($hide_site_name) { print ' class="element-invisible"'; } ?>>
+            <!-- <div id="site-name"<?php //if ($hide_site_name) { print ' class="element-invisible"'; } ?>>
               <strong>
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                <a href="<?php //print $front_page; ?>" title="<?php //print t('Home'); ?>" rel="home"><span><?php //print $site_name; ?></span></a>
               </strong>
-            </div>
+            </div> -->
           <?php else: /* Use h1 when the content title is empty */ ?>
             <h1 id="site-name"<?php if ($hide_site_name) { print ' class="element-invisible"'; } ?>>
               <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
@@ -185,7 +185,7 @@
     <?php endif; */?>
 
     <div id="content" class="column"><div class="section">
-      <?php /*if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+      <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -204,7 +204,7 @@
         <ul class="action-links">
           <?php print render($action_links); ?>
         </ul>
-      <?php endif; */?>
+      <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
 

@@ -220,37 +220,37 @@
               </div>
             </div>
           <?php } ?>
-		  <section id="newabout">
-        <div class="container">
-          <div class="row" >
-            <div class="col-md-7">
-              <h2 class="text-uppercase mt-20 letter-space-3"><?php print $node->field_title[$langcode][0]['value']; ?><span class="text-theme-colored"><?php print $node->field_speciality[$langcode][0]['value']; ?></span></h2>
-              <?php print $node->field_description[$langcode][0]['value'] ?>              
-              <a href="about-vivezacare" class="btn btn-flat btn-theme-colored text-uppercase mt-20"><?php print t('Read More'); ?></a>
-            </div>
-        
-            <div class="col-md-5">
-              <div class="p-20 mt-30">
-                <ul id="myTab" class="nav nav-tabs boot-tabs">
-                  <li class="active"><a href="#profile" data-toggle="tab"><?php print t('Indian'); ?></a></li>
-                  <li><a href="#profile1" data-toggle="tab"><?php print t('International'); ?></a></li>
-                </ul>
-                <div id="myTabContent" class="tab-content">
-                  <div class="tab-pane fade in active" id="profile">
-                    <p><iframe width="560" height="315" src="<?php print $node->field_embedded_link['und'][0]['value']; ?>https://www.youtube.com/embed/xNeIdfFTTzg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
-                  </div>
-                  <div class="tab-pane fade" id="profile1">
-                    <p><iframe width="560" height="315" src="<?php print $node->field_embedded_link['und'][1]['value']; ?>https://www.youtube.com/embed/WwKwtzJH4SI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+          <section id="newabout">
+            <div class="container">
+              <div class="row" >
+                <div class="col-md-7">
+                  <h2 class="text-uppercase mt-20 letter-space-3"><?php print $node->field_title[$langcode][0]['value']; ?><span class="text-theme-colored"><?php print $node->field_speciality[$langcode][0]['value']; ?></span></h2>
+                  <?php print $node->field_description[$langcode][0]['value'] ?>              
+                  <a href="about-vivezacare" class="btn btn-flat btn-theme-colored text-uppercase mt-20"><?php print t('Read More'); ?></a>
+                </div>
+            
+                <div class="col-md-5">
+                  <div class="p-20 mt-30">
+                    <ul id="myTab" class="nav nav-tabs boot-tabs">
+                      <li class="active"><a href="#profile" data-toggle="tab"><?php print t('Indian'); ?></a></li>
+                      <li><a href="#profile1" data-toggle="tab"><?php print t('International'); ?></a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                      <div class="tab-pane fade in active" id="profile">
+                        <p><iframe width="560" height="315" src="<?php print $node->field_embedded_link['und'][0]['value']; ?>https://www.youtube.com/embed/xNeIdfFTTzg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+                      </div>
+                      <div class="tab-pane fade" id="profile1">
+                        <p><iframe width="560" height="315" src="<?php print $node->field_embedded_link['und'][1]['value']; ?>https://www.youtube.com/embed/WwKwtzJH4SI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         </div>
-      </section>
-    </div>
-  </div>
-</section>	
+      </div>
+    </section>	
 	<!--get Goute form-->
      
 
