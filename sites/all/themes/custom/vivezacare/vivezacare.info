@@ -12,6 +12,7 @@ stylesheets[print][] = css/print.css
 
 ; custom stylesheets
 stylesheets[all][] = css/bootstrap.min.css
+stylesheets[all][] = revolution-slider/css/settings.css
 stylesheets[all][] = css/jquery-ui.min.css
 stylesheets[all][] = css/animate.css
 stylesheets[all][] = css/css-plugin-collections.css
@@ -46,7 +47,7 @@ scripts[] = revolution-slider/js/extensions/revolution.extension.slideanims.min.
 scripts[] = revolution-slider/js/extensions/revolution.extension.video.min.js
 stylesheets[all][] = revolution-slider/css/navigation.css
 stylesheets[all][] = revolution-slider/css/layers.css
-stylesheets[all][] = revolution-slider/css/settings.css
+
 
 ; regions
 regions[header] = Header
